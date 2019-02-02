@@ -51,7 +51,7 @@ public class Application {
     private void executeStatementFrom(StatementFactory statementFactory) throws SQLException {
         Validate.notNull(dataSource);
         try (PreparedStatement ps = statementFactory.create()) {
-            ps.setInt(1, 10001);
+            ps.setInt(1, 10_001);
             final List<Object> rows = Lists.newArrayList();
             try (ResultSet rs = ps.executeQuery()) {
                 ResultSetMetaData metaData = rs.getMetaData();
